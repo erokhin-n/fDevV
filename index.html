@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<title>find dev</title>
+	<meta-name = “viewport” content=”width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0”> 
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet"> 
+</head>
+	<body id = 'body'>
+		<div id="app">
+		<div class="wrapper">
+			<div class="container">
+				<div class="descCont">
+					<p class='description'>найди программиста и не нарвись на таксиста</p>
+				</div>
+				<span class="score" id="score">{{clicks}}</span>
+				<section class = "gameField" id = 'gameField'>
+		 			<but
+		 				v-for='but in buts'
+		 				:key ='but.id'
+		 				:but = 'but'
+		 			></but>
+				</section>
+				<div class="curtainCoveringBegin" id = 'covering'>
+					<div class="inscriptionCoverBegin" id ="inscriptionCover"></div>
+				</div>
+				<div class="butCont">
+					<div class="hideBut" id="reload">
+						<i class="hideRef" id="rel" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>	
+		</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

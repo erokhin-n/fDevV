@@ -1,0 +1,365 @@
+/*обнуление стилей*/
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,*:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,:active {outline: none;}
+a:focus,a:active {outline: none;}
+
+nav, footer, header, aside {display: block;}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  webkit-text-size-adjust: 100%;
+  font-family: 'Russo One', sans-serif;
+}
+
+input, button, textarea {font-family: inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li {list-style: none;}
+img{vertical-align: top;}
+
+h1, h2, h3, h4, h5, h6{font-size:inherit; font-weight: 400;}
+
+
+/*обнуление стилей конец*/
+
+body {
+	background: linear-gradient(to top, #3bb375 20%, #fff 50%, #3bb375 80%);
+	height: 100%;
+	position: relative;
+}
+
+.container{
+	max-width: 1200px;
+  margin: 0px auto;
+  padding: 0px 15px; 
+  position: relative;
+}
+
+.wrapper {
+	width: 100%;	
+	position: absolute;
+	top: 25%;
+}
+
+.gameField {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.gameCell {
+	width: 15%;
+	background-color:  #186E7F;
+	cursor: pointer;
+	color: #f0f0f0;
+	transition: 0.9s;
+	font-size: 10%;
+	padding-bottom: 30%;
+	border-radius: 20px;
+}
+
+.gameCell:hover,
+.reload:hover {
+	box-shadow: 1px 1px 10px 10px #adff2f;
+	transition: 0.3s;
+}
+
+.gameCell:active,
+.reload:active {
+	box-shadow: 1px 1px 10px 10px #adff2f;
+	transition: 0.3s;
+}
+
+.score{
+	display:block;
+	font-size: 50px;
+	width: 5%;
+	height: 15%;
+	position: absolute;
+	bottom: 109%;
+	left: 48%;
+	border: 1px solid black;
+	border-radius: 36%;
+	text-align: center;
+}
+
+.devFinded {
+	background: no-repeat center/100% url(img/dev.jpg);
+	cursor: pointer;
+	transition: 0.9s;
+	width: 15%;
+	background-color: #4b0082;
+	cursor: pointer;
+	padding-bottom: 30%;
+	border-radius: 20px;
+}
+
+.taxFinded {
+	background: no-repeat center/100% url(img/tax.jpg);
+	cursor: pointer;
+	transition: 0.9s;
+	width: 15%;
+	background-color: #ffc100;
+	cursor: pointer;
+	padding-bottom: 30%;
+	border-radius: 20px;
+}
+
+.hideBut {
+	visibility: hidden;
+}
+
+.reload{
+	width: 200px;
+	height: 80px;
+	transition: 2s;
+	background-color: #186E7F;
+	cursor: pointer;
+	top: 112%;
+	left: 33%;
+	border-radius:7%;
+	text-align: center;
+}
+
+.gameFinishDev{
+	z-index: 2;
+	position: absolute;
+	min-width: 100%;
+	min-height: 100%;
+	background: repeat-x radial-gradient(circle farthest-corner at 100px 50px, #000080, #186E7F);
+	left: 0;
+	top: 0;
+	transition: 1s;
+	border-radius: 20px;
+}
+
+.gameFinishTax{
+	z-index: 2;
+	position: absolute;
+	background: repeat-x repeating-linear-gradient(45deg, #ffc100, #ffc100 30px, #000 30px, #000 50px);
+	left: 0;
+	top: 0;
+	transition: 1s;
+	min-width: 100%;
+	min-height: 100%;
+	border-radius: 20px;
+
+}
+
+.gameOver{
+	z-index: 2;
+	position: absolute;
+	min-width: 100%;
+	min-height: 100%;
+	background: repeat-x radial-gradient(circle farthest-corner at 100px 50px, #32cd32, #adff2f);
+	left: 0;
+	top: 0;
+	transition: 1s;
+	border-radius: 20px;
+}
+
+.curtainCoveringBegin{
+	visibility: hidden;
+}
+
+.curtainCovering{
+	z-index: 2;
+	left: 0;
+	top: 0;
+	position: absolute;
+	min-width: 100%;
+	min-height: 150%;
+	background-color: rgb(0%, 0%, 0%, 0);
+	border-radius: 20px;
+
+}
+
+.inscriptionCoverBegin{
+	z-index: 0;
+	font-size: 0px;
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 1%;
+	left: 50%;
+}
+
+.inscriptionCover{
+	z-index: 1;
+	color: black;
+	font-size:76px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #fff;
+	background-color: rgb(43.92%, 50.2%, 56.47%, 0.5);
+	border-radius: 20px;
+	text-align: center;
+}
+
+
+.description {
+	text-align: center;
+	font-size: 20px;
+}
+
+.hideRef {
+    visibility: hidden;
+}
+
+.fa, .fa-refresh {
+	font-size: 72px !important;
+
+}
+
+.descCont{
+	width: 100%;
+	position: absolute;
+	bottom: 133%;
+}
+
+.butCont {
+	display: flex;
+	justify-content: space-around;
+	min-width: 50%;
+	margin: 0 auto;
+	position: absolute;
+	top: 110%;
+	left: 25%;
+}
+
+
+@media (max-width: 992px) {
+  .score{
+  	width: 5%;
+		height: 20%;
+		border: 1px solid black;
+		border-radius: 36%;
+		position: absolute;
+		bottom: 104%;
+  }
+  .descCont{
+  	max-width: 71%;
+   	position: absolute;
+   	left: 15%;
+   	bottom: 127%;
+  }
+  .description {
+    font-size: 28px;
+	}
+	.butCont {
+		min-width: 100%;
+		left: 0;
+	}
+}
+
+@media (max-width: 767px) {
+  .reload{
+  	width:30%;
+  }
+	.muteButton{
+		width:30%;
+	}
+	.descCont{
+  	min-width: 100%;
+   	position: absolute;
+   	left: 0;
+   	bottom: 120%;
+  }
+  .description {
+    font-size: 30px;
+	}
+	.gameField {
+		padding-top: 15%;
+	}
+	.gameCell {
+		padding-bottom: 32%;
+	}
+	.score {
+		font-size: 68px;
+		width: 18%;
+		position: absolute;
+		left: 41%;
+		bottom: 93%;
+		border: none;
+	}
+	.inscriptionCover {
+		font-size: 26px;
+
+	}
+	.gameOver,.gameFinishTax, .gameFinishDev {
+		top: 15%;
+		min-height: 86%;
+	}
+	.curtainCovering{
+		top: 30%;
+		min-height: 110%;
+	}
+}
+
+@media (max-width: 380px) {
+  .reload{
+  	width:30%;
+  }
+	.muteButton{
+		width:30%;
+	}
+	.descCont{
+  	min-width: 100%;
+   	position: absolute;
+   	left: 0;
+   	bottom: 128%;
+  }
+  .description {
+    font-size: 18px;
+	}
+	.gameField {
+		padding-top: 15%;
+	}
+	.gameCell {
+		padding-bottom: 50%;
+	}
+	.score {
+		font-size: 43px;
+		width: 18%;
+		position: absolute;
+		left: 40%;
+		bottom: 100%;
+	}
+	.inscriptionCover {
+		font-size: 26px;
+
+	}
+	.gameOver,.gameFinishTax, .gameFinishDev {
+		top: 15%;
+		min-height: 85%;
+	}
+	.curtainCovering{
+		top: 10%;
+		min-height: 160%;
+	}
+}
+
